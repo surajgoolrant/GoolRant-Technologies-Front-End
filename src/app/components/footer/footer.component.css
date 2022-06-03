@@ -106,9 +106,7 @@ footer li {
 footer li a {
   color: #222;
 }
-.contact-widget {
-  margin-left: -20px;
-}
+
 .contact-widget .widget-content {
   position: relative;
   margin-bottom: 25px;
@@ -121,4 +119,22 @@ footer li a {
   line-height: 26px;
   font-family: "Open Sans", sans-serif;
   color: #848484;
+}
+@media (min-width: 1282px) {
+  .container {
+    max-width: 1550px;
+  }
+  .auto-container {
+    max-width: 1550px !important;
+  }
+  #text-5,
+  #text-10 {
+    left: 81px;
+  }
+  #text-3 .text {
+    line-height: 30px;
+  }
+  .kc-row-container.kc-container {
+    max-width: 1550px !important;
+  }
 }

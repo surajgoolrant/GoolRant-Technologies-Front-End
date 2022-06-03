@@ -1,9 +1,10 @@
+<app-loader *ngIf="isLoading"></app-loader>
 <section
   data-kc-fullwidth="row"
   class="kc-elm kc-css-940523 kc_row"
-  style="left: 0px; padding-left: 0px; width: 1263.33px"
+  style="left: 0px; padding-left: 0px"
 >
-  <div class="kc-row-container kc-container">
+  <div class="">
     <div class="kc-wrap-columns">
       <div class="kc-elm kc-css-19867 kc_col-sm-12 kc_column kc_col-sm-12">
         <div class="kc-col-container">
@@ -119,45 +120,11 @@
                           <ul></ul>
                         </div>
                         <form
-                          action="/?utm_source=stories&amp;utm_medium=Instagram%2FFB#wpcf7-f315-p2047-o1"
-                          method="post"
+                          [formGroup]="userForm"
+                          (ngSubmit)="register()"
                           class="wpcf7-form init"
-                          novalidate="novalidate"
                           data-status="init"
                         >
-                          <div style="display: none">
-                            <input type="hidden" name="_wpcf7" value="315" />
-                            <input
-                              type="hidden"
-                              name="_wpcf7_version"
-                              value="5.4.2"
-                            />
-                            <input
-                              type="hidden"
-                              name="_wpcf7_locale"
-                              value="en_US"
-                            />
-                            <input
-                              type="hidden"
-                              name="_wpcf7_unit_tag"
-                              value="wpcf7-f315-p2047-o1"
-                            />
-                            <input
-                              type="hidden"
-                              name="_wpcf7_container_post"
-                              value="2047"
-                            />
-                            <input
-                              type="hidden"
-                              name="_wpcf7_posted_data_hash"
-                              value=""
-                            />
-                            <input
-                              type="hidden"
-                              name="_wpcf7_recaptcha_response"
-                              value="03AGdBq24Vi92j1G7pdL99CakeOadvKZyxwhXf2rDCtuMjrTDzv-f38y1HnBqEpvye5yYI4u2tskEkzrIFpb95IBT9PL7AKNL98yrXc6HyP3u3GptSW4T3pOBuWByIyhUlRebfli13BJA1CGzpXoXzMMYhecuNWCgviZJSo1tqUbLeNy09paFyZ4uwlj3nrwUBo6Xaz6DoI7ebiZJgry1lMEtFnrePhje3pteTkSHdf4DGkQp3NiPRoK2-MImS7ryt-cQups5ErLv3V4yeYiJMP_q7LuVoVaUBfZxU7FgeMUiIPtJr6X43Wan0NHuDd4FP8QgQ7u3cQCzHoiQL5OFCnXo3nhHRA-YyrVESkDJQ5TctOExgBJyxtPOd_gfortCiUrXayE6mqAeIQ6yPdH-3dRkW6pW98490nUvtRQf6IvlDet1NSoXpYIAB-YrBNfXj3AxTiTWiRhy-d6hqocAboQxxAFps5CgwRE8aWxubijnV47IKbJQ-6V4XpX_zB4-6Y0mw6k9i0JJDmBCj9qaEFas8dBbsTczKvw"
-                            />
-                          </div>
                           <div class="">
                             <div id="contact-form">
                               <div class="row clearfix">
@@ -168,14 +135,25 @@
                                     class="wpcf7-form-control-wrap your-firstname"
                                     ><input
                                       type="text"
+                                      formControlName="firstName"
                                       name="your-firstname"
                                       value=""
                                       size="40"
                                       class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                      [ngClass]="{
+                                        'border-red-800':
+                                          message && message['firstName']
+                                      }"
                                       aria-required="true"
                                       aria-invalid="false"
                                       placeholder="First name"
                                   /></span>
+                                  <span
+                                    class="text-sm text-red-800"
+                                    *ngIf="message && message['firstName']"
+                                  >
+                                    {{ message["firstName"] }}
+                                  </span>
                                 </div>
                                 <div
                                   class="col-lg-6 col-md-6 col-sm-12 form-group"
@@ -184,6 +162,7 @@
                                     class="wpcf7-form-control-wrap your-lastname"
                                     ><input
                                       type="text"
+                                      formControlName="lastName"
                                       name="your-lastname"
                                       value=""
                                       size="40"
@@ -191,7 +170,17 @@
                                       aria-required="true"
                                       aria-invalid="false"
                                       placeholder="Last name"
+                                      [ngClass]="{
+                                        'border-red-800':
+                                          message && message['lastName']
+                                      }"
                                   /></span>
+                                  <span
+                                    class="text-sm text-red-800"
+                                    *ngIf="message && message['lastName']"
+                                  >
+                                    {{ message["lastName"] }}
+                                  </span>
                                 </div>
                                 <div
                                   class="col-lg-6 col-md-6 col-sm-12 form-group"
@@ -200,6 +189,7 @@
                                     class="wpcf7-form-control-wrap your-email"
                                     ><input
                                       type="email"
+                                      formControlName="email"
                                       name="your-email"
                                       value=""
                                       size="40"
@@ -207,7 +197,17 @@
                                       aria-required="true"
                                       aria-invalid="false"
                                       placeholder="Email"
+                                      [ngClass]="{
+                                        'border-red-800':
+                                          message && message['email']
+                                      }"
                                   /></span>
+                                  <span
+                                    class="text-sm text-red-800"
+                                    *ngIf="message && message['email']"
+                                  >
+                                    {{ message["email"] }}
+                                  </span>
                                 </div>
                                 <div
                                   class="col-lg-6 col-md-6 col-sm-12 form-group"
@@ -216,6 +216,7 @@
                                     class="wpcf7-form-control-wrap your-Phone"
                                     ><input
                                       type="text"
+                                      formControlName="phone"
                                       name="your-Phone"
                                       value=""
                                       size="40"
@@ -223,7 +224,17 @@
                                       aria-required="true"
                                       aria-invalid="false"
                                       placeholder="Phone"
+                                      [ngClass]="{
+                                        'border-red-800':
+                                          message && message['phone']
+                                      }"
                                   /></span>
+                                  <span
+                                    class="text-sm text-red-800"
+                                    *ngIf="message && message['email']"
+                                  >
+                                    {{ message["phone"] }}
+                                  </span>
                                 </div>
                                 <div
                                   class="col-lg-6 col-md-6 col-sm-12 form-group"
@@ -232,13 +243,24 @@
                                     class="wpcf7-form-control-wrap your-subject"
                                     ><input
                                       type="text"
+                                      formControlName="subject"
                                       name="your-subject"
                                       value=""
                                       size="40"
                                       class="wpcf7-form-control wpcf7-text"
                                       aria-invalid="false"
                                       placeholder="Subject"
+                                      [ngClass]="{
+                                        'border-red-800':
+                                          message && message['subject']
+                                      }"
                                   /></span>
+                                  <span
+                                    class="text-sm text-red-800"
+                                    *ngIf="message && message['subject']"
+                                  >
+                                    {{ message["subject"] }}
+                                  </span>
                                 </div>
                                 <div
                                   class="col-lg-12 col-md-12 col-sm-12 form-group"
@@ -248,11 +270,16 @@
                                   >
                                     <textarea
                                       name="your-message"
+                                      formControlName="descmessage"
                                       cols="40"
                                       rows="10"
                                       class="wpcf7-form-control wpcf7-textarea"
                                       aria-invalid="false"
                                       placeholder="Message"
+                                      [ngClass]="{
+                                        'border-red-800':
+                                          message && message['descmessage']
+                                      }"
                                     ></textarea>
                                   </span>
                                 </div>
@@ -261,8 +288,12 @@
                                 >
                                   <button
                                     class="theme-btn btn-style-four"
+                                    [ngClass]="{
+                                      'opacity-50': !userForm.valid
+                                    }"
                                     type="submit"
                                     name="submit-form"
+                                    [disabled]="!userForm.valid"
                                   >
                                     Send Message
                                   </button>

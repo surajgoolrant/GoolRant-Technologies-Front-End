@@ -1066,3 +1066,63 @@ h4,
   font-weight: 900 !important;
   color: burlywood !important;
 }
+
+.navbar .megamenu {
+  padding: 1rem;
+}
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+  .navbar .has-megamenu {
+    position: static !important;
+  }
+  .navbar .megamenu {
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .col-megamenu li {
+    margin: 12px 0px 16px 41px;
+  }
+  .dropdown-content .col-megamenu a {
+    float: none;
+    color: white;
+    padding: 13px 12px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    margin-right: 36px;
+  }
+  .dropdown-content .col-megamenu a:hover {
+    color: darkslateblue;
+  }
+  .submenu {
+    left: auto;
+    top: 41%;
+    right: -43%;
+  }
+  .submenu li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .submenu.submenu-left {
+    display: none;
+  }
+  .dropdown-menu-right li:nth-child(3):hover .submenu.submenu-left {
+    display: block;
+  }
+}
+/* ============ desktop view .end// ============ */
+
+/* ============ mobile view ============ */
+@media (max-width: 991px) {
+  .navbar.fixed-top .navbar-collapse,
+  .navbar.sticky-top .navbar-collapse {
+    overflow-y: auto;
+    max-height: 90vh;
+    margin-top: 10px;
+  }
+}
+/* ============ mobile view .end// ============ */

@@ -1,7 +1,7 @@
 .kc_row:not(.kc_row_inner) {
   clear: both;
   float: left;
-  width: 100%;
+  width: 97%;
 }
 .kc-row-container:not(.kc-container) {
   padding-left: 0;
@@ -609,4 +609,10 @@ body.kc-css-system .kc-css-927151 {
   font-size: 15px;
   color: #666;
   line-height: 30px;
+}
+
+@media (min-width: 1282px) {
+  .image-box {
+    right: -167px !important;
+  }
 }

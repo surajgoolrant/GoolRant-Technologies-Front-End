@@ -245,3 +245,16 @@ a:visited {
   text-decoration: none;
   outline: 0;
 }
+
+@media (min-width: 1282px) {
+  .container {
+    max-width: 1550px;
+  }
+  .auto-container {
+    max-width: 1550px !important;
+  }
+  figure {
+    position: absolute;
+    left: 151px;
+  }
+}

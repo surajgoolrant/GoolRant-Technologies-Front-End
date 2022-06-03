@@ -12,7 +12,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SpinnerComponent } from './common/spinner/spinner.component';
 import { SubitservicesComponent } from './components/itservices/subitservices/subitservices.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoaderComponent } from './common/loader/loader.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +30,20 @@ import { SubitservicesComponent } from './components/itservices/subitservices/su
     FooterComponent,
     SpinnerComponent,
     SubitservicesComponent,
+    LoaderComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      closeButton: true,
+      timeOut: 15000, // 15 seconds
+      progressBar: true,
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

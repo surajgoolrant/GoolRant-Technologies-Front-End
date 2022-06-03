@@ -7,7 +7,7 @@
             <div class="col-md-6 d-flex align-items-center">
               <p class="mb-0 phone pl-md-2">
                 <a href="#" class="mr-2"
-                  ><span class="fa fa-phone mr-1"></span> +2793562812
+                  ><span class="fa fa-phone mr-1"></span> +2793562811
                 </a>
                 <a href="#"
                   ><span class="fa fa-paper-plane mr-1"></span>
@@ -55,7 +55,7 @@
   id="ftco-navbar"
 >
   <div class="container">
-    <a class="navbar-brand" href="index.html"
+    <a class="navbar-brand" routerLink="/home"
       ><img
         src="../../../assets/img/logo1.jpg"
         style="width: 100px; height: 60px; border-radius: 25px"
@@ -111,11 +111,78 @@
             >
           </div>
         </li>
-        <li class="nav-item">
-          <a routerLink="about" routerLinkActive="linkactive" class="nav-link"
-            >About</a
+        <li class="nav-item dropdown has-megamenu">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            data-bs-toggle="dropdown"
           >
+            About
+          </a>
+          <div
+            class="dropdown-menu dropdown-content"
+            role="menu"
+            style="
+              width: 29rem;
+              min-width: 35rem;
+              left: 55%;
+              background-color: #413c69;
+            "
+          >
+            <div class="row g-3">
+              <!-- end col-3 -->
+              <div class="col-lg-6 col-6" style="padding: 0">
+                <div class="col-megamenu">
+                  <!-- <h6 class="title">Title Menu Two</h6> -->
+                  <ul class="list-unstyled dropdown-menu-right">
+                    <li>
+                      <a routerLink="about" routerLinkActive="linkactive"
+                        >About Goolrant</a
+                      >
+                    </li>
+                    <li><a href="#">Client Briefing Program</a></li>
+                    <li class="goolrantmenu">
+                      <a href="#">Goolrant Events &raquo;</a>
+                      <ul class="submenu submenu-left dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" href="">Annual Meeting</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="">Product Launch</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Leadership Team</a></li>
+                  </ul>
+                </div>
+                <!-- col-megamenu.// -->
+              </div>
+              <div class="col-lg-6 col-6" style="padding: 0">
+                <div class="col-megamenu">
+                  <!-- <h6 class="title">Title Menu Four</h6> -->
+                  <ul class="list-unstyled">
+                    <li><a href="#">News and Press Releases</a></li>
+                    <li><a href="#">Public Polilcy</a></li>
+                    <li><a href="#">Partnerships</a></li>
+                    <li><a href="#">Sponsorships</a></li>
+                  </ul>
+                </div>
+                <!-- col-megamenu.// -->
+              </div>
+              <!-- end col-3 -->
+            </div>
+            <!-- end row -->
+          </div>
+          <!-- dropdown-mega-menu.// -->
         </li>
+        <!--<li class="nav-item">
+           <a routerLink="about" routerLinkActive="linkactive" class="nav-link"
+            ></a
+          >
+        </li> 
+        </li>-->
+
         <li class="nav-item">
           <a routerLink="contact" routerLinkActive="linkactive" class="nav-link"
             >Contact</a
